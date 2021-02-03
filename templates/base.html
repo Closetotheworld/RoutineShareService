@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-{ % include 'head.html %}
+{ % include 'head.html' %}
 <body>
 
-    <div style = "height: 10rem; background-color: #338888; border_radius: 1rem; margin: 2rem;">
+    {% include 'header.html' %}
 
-    </div>
-    <div style = "height: 20rem; background-color: #338888; border_radius: 1rem; margin: 2rem;">
+    {% block content %}
 
-    </div>
-    <div style = "height: 10rem; background-color: #338888; border_radius: 1rem; margin: 2rem;">
+    {% endblock %}
 
-    </div>
+    {% include 'footer.html' %}
 </body>
 </html>
