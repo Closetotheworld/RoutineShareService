@@ -17,7 +17,6 @@ def hello(request):
         new_model.text = temp
         new_model.save()
 
-        hello_world_list = SampleModel.objects.all()
         return HttpResponseRedirect(reverse('account:hello'))
     else:
         hello_world_list = SampleModel.objects.all()
