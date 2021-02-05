@@ -2,24 +2,25 @@
         <div>
             <h1 style="font-family: 'Montserrat', sans-serif;">Do Exercise</h1>
         </div>
-        <div>
-            <a href="{% url 'articleapp:list' %}?next={{ request.path }}">
+        <div class="nav_header_nav_bar">
+            <a href="{% url 'articleapp:list' %}?next={{ request.path }}" class="nav_header">
                 <span>Articles</span>
             </a>
-            <span>nav2</span>
-            <span>nav3</span>
+            <a href="{% url 'projectapp:list' %}" class="nav_header">
+                <span>Projects</span>
+            </a>
             {% if not user.is_authenticated %}
-            <a href="{% url 'account:login' %}?next={{ request.path }}">
+            <a href="{% url 'account:login' %}?next={{ request.path }}" class="nav_header">
                 <span>login</span>
             </a>
-            <a href="{% url 'account:create' %}?next={{ request.path }}">
+            <a href="{% url 'account:create' %}?next={{ request.path }}" class="nav_header">
                 <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'account:detail' pk=user.pk %}">
+            <a href="{% url 'account:detail' pk=user.pk %}" class="nav_header">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'account:logout'%}?next={{ request.path }}">
+            <a href="{% url 'account:logout'%}?next={{ request.path }}" class="nav_header">
                 <span>logout</span>
             </a>
             {% endif%}
