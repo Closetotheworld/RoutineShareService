@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
     <div>
@@ -7,9 +6,9 @@
             <h1>
                 {{ target_article.title }}
             </h1>
-            <h3>
-                {{ target_article.author.profile.nickname }}
-            </h3>
+            <h4>
+                닉네임 : {{ target_article.author.profile.nickname }}
+            </h4>
             <hr>
             <img style="width:100%; border-radius:1rem; margin:2rem 0;"
                  src="{{ target_article.image.url }}" alt="">
@@ -28,6 +27,9 @@
                 </a>
             {% endif %}
             <hr>
+            {% for comment in target_article.comment.all %}
+                {% include 'commentapp/detail.html' with comment=comment %}
+            {% endfor %}
             {% include 'commentapp/create.html' with article=target_article %}
         </div>
     </div>
